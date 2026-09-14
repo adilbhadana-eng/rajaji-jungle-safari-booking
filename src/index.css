@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+@theme {
+  /* ── Palette (Uttarakhand field-guide system) ─────────────────── */
+  --color-forest: #1b3a2d;
+  --color-forest-deep: #163126;
+  --color-pine: #0e231a;
+  --color-natural: #2d6a4f;
+  --color-sage: #52b788;
+  --color-sage-100: #e4efe7;
+  --color-sage-200: #cde3d4;
+  --color-earth: #5a5a4a;
+  --color-earth-light: #86856f;
+  --color-sand: #f5f0e6;
+  --color-sand-2: #ede5d2;
+  --color-beige: #d9ceb8;
+  --color-gold: #d4a017;
+  --color-gold-deep: #a87e0f;
+  --color-ink: #1a1a1a;
+  --color-paper: #fffdf7;
+
+  /* ── Type ─────────────────────────────────────────────────────── */
+  --font-sans: "Source Sans 3", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif: "DM Serif Display", Georgia, "Times New Roman", serif;
+
+  /* ── Shadows (kept subtle — borders & photography do the work) ── */
+  --shadow-card: 0 1px 2px rgb(22 49 38 / 0.06), 0 10px 30px -18px rgb(22 49 38 / 0.25);
+  --shadow-lift: 0 2px 4px rgb(22 49 38 / 0.06), 0 24px 48px -24px rgb(22 49 38 / 0.35);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 88px;
+  }
+
+  body {
+    @apply bg-sand font-sans text-ink antialiased;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: #d4a017;
+    color: #163126;
+  }
+
+  :focus-visible {
+    outline: 2px solid #d4a017;
+    outline-offset: 2px;
+    border-radius: 3px;
+  }
+
+  img {
+    @apply select-none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    .reveal,
+    .reveal.is-in {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  }
+}
+
+@layer components {
+  /* Layout container */
+  .wrap {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+  .wrap-wide {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8;
+  }
+
+  /* Editorial eyebrow label — 01 · SECTION */
+  .eyebrow {
+    @apply flex items-center gap-2.5 text-[11px] font-bold tracking-[0.24em] uppercase;
+  }
+  .eyebrow::after {
+    content: "";
+    @apply h-px w-10 bg-current opacity-40;
+  }
+
+  /* Form primitives */
+  .label {
+    @apply mb-1.5 block text-[13px] font-semibold tracking-wide text-earth;
+  }
+  .input {
+    @apply w-full rounded-md border border-ink/15 bg-paper px-3.5 py-2.5 text-[15px] text-ink placeholder:text-ink/35 transition-colors outline-none focus:border-natural focus:ring-2 focus:ring-natural/20;
+  }
+  .input-error {
+    @apply border-red-500 focus:border-red-500 focus:ring-red-500/20;
+  }
+
+  /* Seam-safe topographic texture for dark and light bands */
+  .topo {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='520' height='260' viewBox='0 0 520 260'><g fill='none' stroke='%23ffffff' stroke-opacity='0.05' stroke-width='1'><path d='M0 35C32 5 68 5 100 35S168 65 200 35S236 5 260 35S328 65 360 35S396 5 420 35S488 65 520 35'/><path d='M0 85C32 55 68 55 100 85S168 115 200 85S236 55 260 85S328 115 360 85S396 55 420 85S488 115 520 85'/><path d='M0 135C32 105 68 105 100 135S168 165 200 135S236 105 260 135S328 165 360 135S396 105 420 135S488 165 520 135'/><path d='M0 185C32 155 68 155 100 185S168 215 200 185S236 155 260 185S328 215 360 185S396 155 420 185S488 215 520 185'/><path d='M0 235C32 205 68 205 100 235S168 265 200 235S236 205 260 235S328 265 360 235S396 205 420 235S488 265 520 235'/></g></svg>");
+    background-repeat: repeat;
+    background-size: 520px 260px;
+  }
+  .topo-light {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='520' height='260' viewBox='0 0 520 260'><g fill='none' stroke='%231b3a2d' stroke-opacity='0.06' stroke-width='1'><path d='M0 35C32 5 68 5 100 35S168 65 200 35S236 5 260 35S328 65 360 35S396 5 420 35S488 65 520 35'/><path d='M0 85C32 55 68 55 100 85S168 115 200 85S236 55 260 85S328 115 360 85S396 55 420 85S488 115 520 85'/><path d='M0 135C32 105 68 105 100 135S168 165 200 135S236 105 260 135S328 165 360 135S396 105 420 135S488 165 520 135'/><path d='M0 185C32 155 68 155 100 185S168 215 200 185S236 155 260 185S328 215 360 185S396 155 420 185S488 215 520 185'/><path d='M0 235C32 205 68 205 100 235S168 265 200 235S236 205 260 235S328 265 360 235S396 205 420 235S488 265 520 235'/></g></svg>");
+    background-repeat: repeat;
+    background-size: 520px 260px;
+  }
+
+  /* Scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+  }
+  .reveal.is-in {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Infinite Marquee Ticker */
+  @keyframes marquee {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+
+  .animate-marquee {
+    display: flex;
+    width: max-content;
+    animation: marquee 33s linear infinite;
+  }
+
+  .animate-marquee:hover {
+    animation-play-state: paused;
+  }
+}
