@@ -9,8 +9,7 @@ export const SITE = {
   description:
     "Sukoon Safari curates immersive wildlife and nature experiences across the diverse zones of Rajaji National Park. From majestic tigers, leopards and elephants to rare birds and authentic Van Gujjar tribal experiences.",
 
-  /** Production URL — update to https://rajajijunglesafaribooking.com once domain is purchased */
-  url: "https://owsam22-safari.vercel.app",
+  url: "https://rajajijunglesafaribooking.com",
 
   /** Contact Numbers */
   phoneDisplay: "+91 73029 33425",
