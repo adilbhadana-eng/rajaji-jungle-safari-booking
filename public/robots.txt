@@ -1,7 +1,4 @@
-# robots.txt — Sukoon Safari
-# Domain will update to rajajijunglesafaribooking.com once purchased.
-
 User-agent: *
 Allow: /
 
-Sitemap: https://owsam22-safari.vercel.app/sitemap.xml
+Sitemap: https://rajajijunglesafaribooking.com/sitemap.xml
