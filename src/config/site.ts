@@ -34,8 +34,10 @@ export const SITE = {
   googleProfileUrl: "https://maps.app.goo.gl/qoa4DeQkJPp1XHxy9",
   googleMapsPlaceUrl:
     "https://www.google.com/maps/place/Sukoon+Safari/@29.9713747,78.2079411,754m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3909416fa1d208c9:0xb122f3bdfae87f83!8m2!3d29.9713747!4d78.210516!16s%2Fg%2F11zfj8xkmt?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D",
-  googleMapEmbedUrl:
-    "https://maps.google.com/maps?q=29.9713747,78.210516+(Sukoon+Safari)&t=m&z=15&ie=UTF8&iwloc=&output=embed",
+
+    // google embed url for iframe on contact page to be added in future
+  // googleMapEmbedUrl:
+  //   "https://maps.google.com/maps?q=29.9713747,78.210516+(Sukoon+Safari)&t=m&z=15&ie=UTF8&iwloc=&output=embed",
 
   /** Social profiles */
   social: {
